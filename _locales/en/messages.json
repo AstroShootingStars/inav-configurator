@@ -3414,6 +3414,12 @@
     "osdElement_GLIDESLOPE_HELP": {
         "message": "Amount of horizontal distance traveled per unit of lost altitude"
     },
+    "osdElement_PAN_SERVO_CENTRED": {
+        "message": "Pan Servo Centred"
+    },
+    "osdElement_PAN_SERVO_CENTRED_HELP": {
+        "message": "Displays if the pan servo is centred (0) or offset (arrows). Check the <b>osd_pan_servo_</b> settings for configuring the pan servo."
+    },
     "osdElement_VTX_CHANNEL": {
         "message": "Video TX Band and Channel"
     },

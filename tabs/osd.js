@@ -102,6 +102,7 @@ SYM.VTX_POWER = 0x27;
 SYM.MAX = 0xCE;
 SYM.PROFILE = 0xCF;
 SYM.SWITCH_INDICATOR_HIGH = 0xD2;
+SYM.PAN_SERVO_IS_OFFSET = 0x1C7;
 
 SYM.AH_AIRCRAFT0 = 0x1A2;
 SYM.AH_AIRCRAFT1 = 0x1A3;
@@ -912,6 +913,12 @@ OSD.constants = {
                     id: 124,
                     min_version: '3.0.0',
                     preview: FONT.symbol(SYM.GLIDESLOPE) + FONT.embed_dot('12.3'),
+                },
+                {
+                    name: 'PAN_SERVO_CENTRED',
+                    id: 136,
+                    min_version: '6.0.0',
+                    preview: FONT.symbol(SYM.PAN_SERVO_IS_OFFSET)
                 },
                 {
                     name: 'MISSION INFO',
