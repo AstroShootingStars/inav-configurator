@@ -202,6 +202,7 @@ SYM_HUD_CARDINAL           |                              | Cardinal heading 90 
 SYM_HUD_CARDINAL           |                              | Cardinal heading 120 degrees          | 452        | 0x1C4
 SYM_HUD_CARDINAL           |                              | Cardinal heading 150 degrees          | 453        | 0x1C5
 SYM_SERVO_PAN_IS_CENTRED   |                              | Pan servo is centred                  | 454        | 0x1C6
-SYM_SERVO_PAN_IS_OFFSET    | SYM.PAN_SERVO_IS_OFFSET      | Pan servo is not centred              | 455        | 0x1C7
+SYM_SERVO_PAN_IS_OFFSET_L  | SYM.PAN_SERVO_IS_OFFSET_L    | Pan servo is turned to the left       | 455        | 0x1C7
+SYM_SERVO_PAN_IS_OFFSET_R  |                              | Pan servo is turned to the right      | 456        | 0x1C8
 
 _*_ Do not change the IDs of these characters
