@@ -2510,6 +2510,7 @@ OSD.GUI.updateFields = function() {
      // Update the OSD preview
      refreshOSDSwitchIndicators();
      updateCraftName();
+     updatePanServoPreview();
 };
 
 OSD.GUI.removeBottomLines = function(){
@@ -2897,6 +2898,17 @@ TABS.osd.initialize = function (callback) {
             refreshOSDSwitchIndicators();
         });
 
+        // Functions for when pan servo settings change
+        $('#osdPanServoIndicatorShowDegrees').on('change', function() {
+            // Update the OSD preview
+            updatePanServoPreview();
+        });
+
+        $('#panServoOutput').on('change', function() {
+            // Update the OSD preview
+            updatePanServoPreview();
+        });
+
         // Function for when text for craft name changes
         $('#craft_name').on('keyup', function() {
             // Make sure that the craft name only contains A to Z, 0-9, spaces, and basic ASCII symbols
@@ -3068,6 +3080,35 @@ function refreshOSDSwitchIndicators() {
                     item.preview = FONT.symbol(SYM.SWITCH_INDICATOR_HIGH) + switchIndText;
                 }
             }
+        }
+    }
+
+    OSD.GUI.updatePreviews();
+}
+
+function updatePanServoPreview() {
+    if ($('#panServoOutput').val() === "0") {
+        $('#osd_pan_settings').hide();
+        $('#panServoOutput').parent().addClass('no-bottom');
+    } else {
+        $('#osd_pan_settings').show();
+        $('#panServoOutput').parent().removeClass('no-bottom');
+    }
+
+    let generalGroup = OSD.constants.ALL_DISPLAY_GROUPS.filter(function(e) {
+        return e.name == "osdGroupGeneral";
+      })[0];
+
+    for (let si = 0; si < generalGroup.items.length; si++) {
+        if (generalGroup.items[si].name == "PAN_SERVO_CENTRED") {
+            let craftNameText = $('#craft_name').val();
+            
+            if ($('#osdPanServoIndicatorShowDegrees').prop('checked')) {
+                generalGroup.items[si].preview = FONT.symbol(SYM.PAN_SERVO_IS_OFFSET_L) + '120' + FONT.symbol(SYM.DEGREES);
+            } else {
+                generalGroup.items[si].preview = FONT.symbol(SYM.PAN_SERVO_IS_OFFSET_L);
+            }
+            break;
         }
     }
 
