@@ -3087,6 +3087,7 @@ function refreshOSDSwitchIndicators() {
 }
 
 function updatePanServoPreview() {
+    // Show or hide the settings, based on of the feature is active.
     if ($('#panServoOutput').val() === "0") {
         $('#osd_pan_settings').hide();
         $('#panServoOutput').parent().addClass('no-bottom');
@@ -3095,6 +3096,16 @@ function updatePanServoPreview() {
         $('#panServoOutput').parent().removeClass('no-bottom');
     }
 
+    // Update the panServoOutput select to be visibly easier to use
+    $('#panServoOutput option').each(function() {
+        if ($(this).val() === "0") {
+            $(this).text("OFF");
+        } else {
+            $(this).text("S" + $(this).val());
+        }
+    });
+
+    // Update the OSD preview based on settings
     let generalGroup = OSD.constants.ALL_DISPLAY_GROUPS.filter(function(e) {
         return e.name == "osdGroupGeneral";
       })[0];
