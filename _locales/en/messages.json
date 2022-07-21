@@ -3648,6 +3648,9 @@
     "osd_pan_servo_settings": {
         "message": "Pan Servo OSD Settings"
     },
+    "osd_pan_servo_settings_HELP": {
+        "message": "This section enables and configures the pan servo offset feature. It is used to keep OSD elements, like the home arrow and POIs, pointing to or in the correct direction. Even when you have panned the camera around."
+    },
     "osdPanServoIndex": {
         "message": "Pan Servo Output"
     },

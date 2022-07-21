@@ -2400,7 +2400,7 @@ OSD.GUI.updateFields = function() {
             $('<div class="helpicon cf_tip"></div>')
                 .css('margin-top', '1px')
                 .attr('title', groupHelp)
-                .appendTo(groupTitleContainer)
+                .prependTo(groupTitleContainer.parent())
                 .jBox('Tooltip', {
                     delayOpen: 100,
                     delayClose: 100,
